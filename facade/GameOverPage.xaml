@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
              Title="GameOverPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="DarkRed">
+        
         <Label
             x:Name="ResultLabel"
             Text="{Binding Result}"
             FontSize="Title"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        
     </VerticalStackLayout>
 </ContentPage>
