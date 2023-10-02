@@ -63,6 +63,7 @@ namespace facade
                 Guesses.Add(new ColorGuess(CurrentGuess));
                 DidWin = false;
 				currentGuess = "";
+				Guesses.Clear();
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
             }
             // Add this guess to the Guesses
