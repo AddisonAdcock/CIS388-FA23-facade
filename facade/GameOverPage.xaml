@@ -16,7 +16,7 @@
         <StackLayout HorizontalOptions="Fill" BackgroundColor="#facade" Padding="60" Grid.Row="0" Orientation="Horizontal"  >
 
             <Label Text="#" FontSize="60" VerticalOptions="Center" />
-            <Label Text="Correct Guess"
+            <Label Text="{Binding secretColor}"
            FontSize="60"
            VerticalOptions="Center"
            />

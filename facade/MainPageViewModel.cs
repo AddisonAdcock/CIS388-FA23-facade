@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using AVFoundation;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -14,7 +13,7 @@ namespace facade
 		[ObservableProperty]
 		private string currentGuess;
 
-		public ObservableCollection<string> Guesses { get; set; }
+		public ObservableCollection<ColorGuess> Guesses { get; set; }
 
 		//public string SecretColor { get; set; }
 
@@ -22,8 +21,11 @@ namespace facade
 		{
 			secretColor = "FACADE";
 			currentGuess = "";
-	
-		}
+			
+			Guesses = new ObservableCollection<ColorGuess>();
+			Guesses.Add(new ColorGuess("#beaded") );
+            Guesses.Add(new ColorGuess("#facade"));
+        }
 
 
 		[RelayCommand]
@@ -40,10 +42,10 @@ namespace facade
 			// if correct, then go to game over (DidWin=true)
 			if (currentGuess == secretColor)
 			{
-				DidWin = true;
+		
 			}
 			else if (Guesses.Count() ==  6){
-				DidWin = false;
+				
 			}
 			// else if this is the 6th guess (and it's wrong)
 			// then go to game over (DidWin=false)

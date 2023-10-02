@@ -45,7 +45,8 @@
                             Text="{Binding Guess}"
                             BackgroundColor="{Binding Color}"
                             FontSize="16"
-                            IsEnabled="false "/>
+                            IsEnabled="false "
+                            />
 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
