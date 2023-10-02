@@ -37,7 +37,17 @@ namespace facade
 			}
 		}
 
-		void Guess()
+
+		[RelayCommand]
+        void RemoveLetter()
+        {
+            if (CurrentGuess.Length < 6 && CurrentGuess.Length > 0)
+            {
+                CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1);
+            }
+        }
+
+        void Guess()
 		{
 			// if correct, then go to game over (DidWin=true)
 			if (currentGuess == secretColor)

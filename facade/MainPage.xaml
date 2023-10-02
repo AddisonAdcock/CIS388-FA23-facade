@@ -228,6 +228,8 @@
                     TextColor="#333"
                     BorderWidth="0"
                     FontSize="36"
+                    
+                    Command="{Binding RemoveLetterCommand}"
                 />
 
 
