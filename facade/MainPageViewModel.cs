@@ -53,7 +53,7 @@ namespace facade
 			{
 				DidWin = true;
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
-                currentGuess = "";
+				foreach (char c in currentGuess) { CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1); }
 				Guesses.Clear();
             }
 			// else if this is the 6th guess (and it's wrong)
@@ -62,8 +62,8 @@ namespace facade
 			{
                 Guesses.Add(new ColorGuess(CurrentGuess));
                 DidWin = false;
-				currentGuess = "";
-				Guesses.Clear();
+                foreach (char c in currentGuess) { CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1); }
+                Guesses.Clear();
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
             }
             // Add this guess to the Guesses
@@ -71,10 +71,10 @@ namespace facade
 			{
 				Guesses.Add(new ColorGuess(CurrentGuess));
 			}
-			//Reset Guess after its been added
-			currentGuess = "";
-			
-		}
+            //Reset Guess after its been added
+            foreach (char c in currentGuess) { CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1); }
+
+        }
 
 
 	}
