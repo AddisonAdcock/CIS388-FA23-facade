@@ -42,17 +42,17 @@ namespace facade
 			// if correct, then go to game over (DidWin=true)
 			if (currentGuess == secretColor)
 			{
-		
+				//DidWin = true;
 			}
 			else if (Guesses.Count() ==  6){
-				
+				//DidWin = false;
 			}
 			// else if this is the 6th guess (and it's wrong)
 			// then go to game over (DidWin=false)
 
 
 			// Add this guess to the Guesses
-			Guesses.Add(CurrentGuess);
+			Guesses.Add(new ColorGuess (CurrentGuess));
 
 		}
 
