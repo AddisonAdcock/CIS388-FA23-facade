@@ -4,7 +4,7 @@
              x:Class="facade.GameOverPage"
              Title="GameOverPage">
     <VerticalStackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
-        
+
         <Label
             x:Name="ResultLabel"
             Text="{Binding Result}"
@@ -12,7 +12,6 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Padding="100"/>
-
         <StackLayout HorizontalOptions="Fill" BackgroundColor="#facade" Padding="60" Grid.Row="0" Orientation="Horizontal"  >
 
             <Label Text="#" FontSize="60" VerticalOptions="Center" />
@@ -23,7 +22,7 @@
 
         </StackLayout>
 
-        <Button WidthRequest="150" BackgroundColor="Grey" Text="Play Again" TextColor="Black" FontSize="22" Margin="50">
+        <Button WidthRequest="150" BackgroundColor="Grey" Text="Play Again" TextColor="Black" FontSize="22" Margin="50" Clicked="Button_Clicked">
         </Button>
     </VerticalStackLayout>
 </ContentPage>

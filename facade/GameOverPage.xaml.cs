@@ -35,4 +35,11 @@ public partial class GameOverPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    async void Button_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("///MainPage");
+
+    }
+
 }

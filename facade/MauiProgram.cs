@@ -17,9 +17,11 @@ public static class MauiProgram
 
 
 		builder.Services.AddTransient<GameOverPage>();
+        builder.Services.AddTransient<MainPage>();
+
 
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();

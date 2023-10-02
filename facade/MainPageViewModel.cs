@@ -14,10 +14,11 @@ namespace facade
 		private string currentGuess;
 
 		public ObservableCollection<ColorGuess> Guesses { get; set; }
+        public bool DidWin { get; private set; }
 
-		//public string SecretColor { get; set; }
+        //public string SecretColor { get; set; }
 
-		public MainPageViewModel()
+        public MainPageViewModel()
 		{
 			secretColor = "FACADE";
 			currentGuess = "";
@@ -52,10 +53,10 @@ namespace facade
 			// if correct, then go to game over (DidWin=true)
 			if (currentGuess == secretColor)
 			{
-				//DidWin = true;
+				DidWin = true;
 			}
 			else if (Guesses.Count() ==  6){
-				//DidWin = false;
+				DidWin = false;
 			}
 			// else if this is the 6th guess (and it's wrong)
 			// then go to game over (DidWin=false)
@@ -63,7 +64,7 @@ namespace facade
 
 			// Add this guess to the Guesses
 			Guesses.Add(new ColorGuess (CurrentGuess));
-
+			
 		}
 
 
