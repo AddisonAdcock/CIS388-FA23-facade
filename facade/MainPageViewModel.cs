@@ -40,7 +40,7 @@ namespace facade
 		[RelayCommand]
         void RemoveLetter()
         {
-            if (CurrentGuess.Length < 6 && CurrentGuess.Length > 0)
+            if (CurrentGuess.Length <= 6 && CurrentGuess.Length > 0)
             {
                 CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1);
             }
@@ -62,6 +62,7 @@ namespace facade
 			{
                 Guesses.Add(new ColorGuess(CurrentGuess));
                 DidWin = false;
+				currentGuess = "";
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
             }
             // Add this guess to the Guesses
