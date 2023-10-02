@@ -25,7 +25,6 @@ namespace facade
 			
 			Guesses = new ObservableCollection<ColorGuess>();
 			Guesses.Add(new ColorGuess("#beaded") );
-            Guesses.Add(new ColorGuess("#facade"));
         }
 
 
@@ -47,7 +46,7 @@ namespace facade
                 CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1);
             }
         }
-
+	
         void Guess()
 		{
 			// if correct, then go to game over (DidWin=true)
@@ -55,15 +54,14 @@ namespace facade
 			{
 				DidWin = true;
 			}
-			else if (Guesses.Count() ==  6){
-				DidWin = false;
-			}
-			// else if this is the 6th guess (and it's wrong)
-			// then go to game over (DidWin=false)
-
-
-			// Add this guess to the Guesses
-			Guesses.Add(new ColorGuess (CurrentGuess));
+            // else if this is the 6th guess (and it's wrong)
+            // then go to game over (DidWin=false)
+            else if (Guesses.Count() == 6)
+            {
+                DidWin = false;
+            }
+            // Add this guess to the Guesses
+            Guesses.Add(new ColorGuess (CurrentGuess));
 			
 		}
 
