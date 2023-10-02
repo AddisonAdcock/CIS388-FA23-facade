@@ -54,10 +54,7 @@ namespace facade
 				DidWin = true;
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
                 currentGuess = "";
-				foreach(ColorGuess g in Guesses)
-				{
-
-				}
+				Guesses.Clear();
             }
 			// else if this is the 6th guess (and it's wrong)
 			// then go to game over (DidWin=false)

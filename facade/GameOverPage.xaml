@@ -16,6 +16,7 @@
 
             <Label Text="#" FontSize="60" VerticalOptions="Center" />
             <Label Text="FACADE"
+           TextColor="White"
            FontSize="60"
            VerticalOptions="Center"
            />
