@@ -209,7 +209,7 @@
                         CornerRadius="30"
                     BackgroundColor="#666"
                     TextColor="White"
-                    Clicked="Button_Clicked"
+                    Command="{Binding GuessCommand}"
                     FontSize="32"
                 >
                     <Button.Shadow>

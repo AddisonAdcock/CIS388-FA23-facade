@@ -24,7 +24,6 @@ namespace facade
 			currentGuess = "";
 			
 			Guesses = new ObservableCollection<ColorGuess>();
-			Guesses.Add(new ColorGuess("#beaded") );
         }
 
 
@@ -46,22 +45,35 @@ namespace facade
                 CurrentGuess = CurrentGuess.Remove(CurrentGuess.Length - 1);
             }
         }
-	
+		[RelayCommand]
         void Guess()
 		{
 			// if correct, then go to game over (DidWin=true)
 			if (currentGuess == secretColor)
 			{
 				DidWin = true;
-			}
-            // else if this is the 6th guess (and it's wrong)
-            // then go to game over (DidWin=false)
-            else if (Guesses.Count() == 6)
-            {
+                Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
+                currentGuess = "";
+				foreach(ColorGuess g in Guesses)
+				{
+
+				}
+            }
+			// else if this is the 6th guess (and it's wrong)
+			// then go to game over (DidWin=false)
+			else if (Guesses.Count() == 6)
+			{
+                Guesses.Add(new ColorGuess(CurrentGuess));
                 DidWin = false;
+                Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
             }
             // Add this guess to the Guesses
-            Guesses.Add(new ColorGuess (CurrentGuess));
+            else if (Guesses.Count() < 6)
+			{
+				Guesses.Add(new ColorGuess(CurrentGuess));
+			}
+			//Reset Guess after its been added
+			currentGuess = "";
 			
 		}
 
